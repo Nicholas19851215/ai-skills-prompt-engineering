@@ -1,0 +1,171 @@
+# Few-Shot Prompt Practice
+# API Documentation
+prompt: |
+  Write API endpoint documentation following these examples:
+  
+  Example 1:
+  POST /api/users
+  Purpose: Create a new user account
+  Parameters: email (string, required), password (string, required), name (string, optional)
+  Response: 201 Created with user object, 400 Bad Request if validation fails
+  
+  Example 2:
+  GET /api/orders/{id}
+  Purpose: Retrieve order details by ID
+  Parameters: id (integer, required, path parameter)
+  Response: 200 OK with order object, 404 Not Found if order doesn't exist
+  
+  Example 3:
+  DELETE /api/sessions/{token}
+  Purpose: Logout user and invalidate session
+  Parameters: token (string, required, path parameter)
+  Response: 204 No Content on success, 401 Unauthorized if token invalid
+  
+  Now write documentation for a WhatsApp webhook endpoint that receives message status updates.
+ai_response: "[Test this prompt and paste the response here]"
+
+# Test Case Writing:
+prompt: |
+  Write test cases following these examples:
+  
+  Example 1:
+  Test ID: TC001
+  Feature: User Registration
+  Scenario: Valid email registration
+  Given: User is on registration page
+  When: User enters valid email "test@example.com" and password "SecurePass123!"
+  Then: Account is created and confirmation email is sent
+  
+  Example 2:
+  Test ID: TC002
+  Feature: Password Reset
+  Scenario: Reset with invalid email
+  Given: User is on password reset page
+  When: User enters non-existent email "fake@nowhere.com"
+  Then: Generic message "If email exists, reset link sent" is displayed
+  
+  Example 3:
+  Test ID: TC003
+  Feature: File Upload
+  Scenario: Upload oversized file
+  Given: User has file larger than 10MB
+  When: User attempts to upload the file
+  Then: Error message "File size exceeds 10MB limit" is shown
+  
+  Now write test cases for WhatsApp message delivery failure scenarios.
+ai_response: "[Test this prompt and paste the response here]"
+
+# Product Requirements
+prompt: |
+  Write a product requirement section following these examples:
+  
+  Example 1:
+  REQ-001: User Authentication
+  Priority: High
+  Description: Users must authenticate using email and password
+  Acceptance Criteria:
+  - Login form validates email format
+  - Password must be 8+ characters with special character
+  - Failed login attempts locked after 5 tries
+  - Session expires after 2 hours of inactivity
+  Dependencies: None
+  
+  Example 2:
+  REQ-002: Order Tracking
+  Priority: Medium  
+  Description: Customers can track order status in real-time
+  Acceptance Criteria:
+  - Order status updates automatically
+  - Tracking page shows current location
+  - Email notifications sent on status changes
+  - Estimated delivery time displayed
+  Dependencies: REQ-001, Payment Gateway Integration
+  
+  Example 3:
+  REQ-003: Mobile Responsiveness
+  Priority: Medium
+  Description: Application adapts to mobile screen sizes
+  Acceptance Criteria:
+  - Works on devices 320px width and above
+  - Touch-friendly button sizes (44px minimum)
+  - Readable text without horizontal scrolling
+  - Fast loading on 3G connections
+  Dependencies: REQ-001, REQ-002
+  
+  Now write a requirement for WhatsApp message template management functionality.
+ai_response: API Documentation
+Prompt:
+Write documentation for a WhatsApp webhook endpoint that receives message status updates.
+
+Response:
+POST /api/webhooks/whatsapp/status
+Purpose: Receive message status updates from WhatsApp
+Parameters:
+
+message_id (string, required): Unique identifier for the WhatsApp message
+status (string, required): Delivery status (e.g., sent, delivered, read, failed)
+timestamp (string, required): ISO 8601 formatted timestamp of the status update
+recipient_id (string, optional): Identifier of the message recipient
+error_code (integer, optional): Error code if status is "failed"
+Response:
+
+200 OK on successful receipt and processing
+400 Bad Request if required parameters are missing or malformed
+401 Unauthorized if authentication fails
+✅ Test Case Writing
+Prompt:
+Write test cases for WhatsApp message delivery failure scenarios.
+
+Response:
+Test ID: TC004
+Feature: WhatsApp Message Delivery
+Scenario: Delivery fails due to invalid recipient number
+Given: A message is queued for delivery
+When: The recipient number is invalid
+Then: Message status is updated to "failed" and error code is logged
+
+Test ID: TC005
+Feature: WhatsApp Message Delivery
+Scenario: Delivery fails due to provider downtime
+Given: WhatsApp provider is experiencing downtime
+When: A message is sent during this period
+Then: Message status is "failed" with retry scheduled and alert triggered
+
+Test ID: TC006
+Feature: WhatsApp Message Delivery
+Scenario: Delivery fails due to rate limiting
+Given: System sends more than allowed messages per minute
+When: Rate limit is exceeded
+Then: Messages are queued or marked "failed" with error code 429
+
+✅ Product Requirements
+Prompt:
+Write a requirement for WhatsApp message template management functionality.
+
+Response:
+REQ-004: WhatsApp Message Template Management
+Priority: High
+Description: Admin users must be able to create, edit, and manage WhatsApp message templates for automated communication.
+Acceptance Criteria:
+
+Templates can be created with placeholders for dynamic content
+Templates must be submitted for approval via WhatsApp Business API
+Approved templates are version-controlled and reusable
+UI allows filtering by status (approved, pending, rejected)
+Error handling for rejected templates with feedback display
+Dependencies: WhatsApp Business API Integration, User Authentication (REQ-001)
+
+# Few-Shot Pattern Analysis
+# Pattern_observations:
+formatting_consistency: "[How well did AI follow complex formatting patterns?]"
+pattern_types: "[Which types of patterns worked best with multiple examples?]"
+quantity_vs_quality: "[Did more examples always improve quality?]"
+
+# Best Practices
+example_selection: "[Your insights about example selection and ordering]"
+consistency_vs_variation: "[How to balance consistency with variation]"
+advantages_over_one_shot: "[When few-shot provides significant advantages over one-shot]"
+
+# Professional Ppplications
+technical_documentation: "[Where few-shot prompting excels in technical documentation]"
+specialized_formats: "[How multiple examples help with specialized formats]"
