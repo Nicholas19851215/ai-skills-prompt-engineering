@@ -1,0 +1,148 @@
+# Advanced WhatsApp Business Integration Prompting Exercises
+# Document Creation Prompt
+task: "Create comprehensive requirements document"
+prompt: |
+  "Create a professional Microsoft Word requirements document for WhatsApp Business API integration with our customer service platform. Include:
+  - Executive summary
+  - Technical requirements  
+  - Integration architecture
+  - User stories for customer service agents
+  - Security and compliance considerations
+  - Implementation timeline
+  Format as a structured business document with proper headings and professional language."
+ai_response: "[Paste the document outline/content generated]"
+notes: "[Your observations about the prompt effectiveness]"
+
+# Diagram Creation Prompt
+# System Architecture Diagram
+prompt: |
+  "Create a system architecture diagram showing WhatsApp Business API integration. Include:
+  - WhatsApp Business API Gateway
+  - Customer Service Platform Database
+  - Agent Dashboard Interface  
+  - Customer Mobile Devices
+  - Security/Authentication Layer
+  - Data Flow arrows and connections
+  Use standard architectural symbols and clear labeling."
+ai_response: "[Describe the diagram generated or paste diagram elements]"
+
+# User Journey Diagram
+prompt: |
+  "Design a customer journey flowchart for WhatsApp support interaction:
+  1. Customer initiates WhatsApp message
+  2. Automated greeting and menu options
+  3. Route to appropriate agent or department
+  4. Agent responds through integrated dashboard
+  5. Resolution and feedback collection
+  6. Case closure and follow-up
+  Include decision points and alternative paths."
+ai_response: "[Document the user journey flow created]"
+
+# Data Flow Diagram
+prompt: |
+  "Create a data flow diagram showing information movement in the WhatsApp integration:
+  - Customer data capture and storage
+  - Message routing and queuing
+  - Agent assignment logic
+  - Response delivery mechanism
+  - Analytics and reporting data
+  Show data stores, processes, and external entities with proper DFD notation."
+ai_response: "[Describe the data flow diagram generated]"
+
+# Translation Preparation
+# Zulu Translation Prompt
+prompt: |
+  "Translate the complete WhatsApp Business Requirements Document into Zulu (isiZulu). 
+  Maintain professional tone and technical accuracy. For technical terms without direct 
+  Zulu equivalents, provide the English term in parentheses. Ensure cultural appropriateness 
+  for South African business context. Preserve document structure and formatting."
+ai_response: "[Document the Zulu translation quality and any adjustments needed]"
+
+# Quality Assurance Prompt
+prompt: |
+  "Review both English and Zulu versions of the WhatsApp requirements document for:
+  - Technical accuracy and consistency
+  - Cultural appropriateness of language
+  - Completeness of translation
+  - Professional tone maintenance
+  - Formatting and structure preservation
+  Provide a quality assessment report with recommendations."
+ai_response: "[Quality assessment results and recommendations]"
+
+# Workflow Optimization
+# Prompt Refinement
+original_approach: "[Document your initial prompting strategy]"
+refined_approach: "[Describe improvements made to your prompts]"
+lessons_learned: "[Key insights about advanced prompting workflows]"
+
+# Efficiency Analysis
+time_saved: "[Estimate time saved vs manual creation]"
+quality_assessment: "[Compare AI-generated vs traditional methods]"
+future_applications: "[How you'll apply these techniques in other projects]"
+
+# Capstone Challenge
+# Comprehensive Workflow
+prompt: |
+  "Design a complete prompt engineering workflow for creating multilingual technical 
+  documentation. Include prompt templates for:
+  - Initial document structure creation
+  - Technical diagram generation
+  - Content quality validation
+  - Translation management
+  - Final review and approval process
+  Make this reusable for future projects."
+ai_response: WhatsApp Business API Integration – Requirements Document
+1. Executive Summary
+This document outlines the requirements for integrating the WhatsApp Business API into our customer service platform. The goal is to replace SMS-based communication with WhatsApp messaging, streamline inter-system communication via APIs, and enhance customer engagement through real-time, mobile-first interactions.
+
+2. Technical Requirements
+2.1 API Integration
+Replace legacy bots with RESTful APIs for inter-system communication.
+Implement webhook endpoints to receive status updates and trigger downstream processes.
+Integrate with SPM and Purple Heron systems for claim updates and status synchronization 1.
+2.2 Message Flow
+Send WhatsApp links to customers for self-service actions (e.g., vehicle assessments).
+Capture and store customer responses and media securely.
+Ensure message delivery tracking and error handling.
+2.3 Authentication & Access Control
+Use OAuth 2.0 or token-based authentication for API endpoints.
+Role-based access for internal users managing WhatsApp interactions.
+2.4 Event Hub Integration
+Utilize Event Hub for centralized event processing and message queuing 1.
+3. Integration Architecture
+Components:
+
+WhatsApp Business API Gateway
+Customer Service Platform (SPM, Foggy, Purple Heron)
+Event Hub (for webhook and event processing)
+Agent Dashboard Interface
+Customer Mobile Devices
+Security Layer (Token validation, encryption)
+Data Flow:
+
+Customer sends message → WhatsApp API
+Webhook triggers → Event Hub → SPM
+Agent responds via dashboard → WhatsApp API
+Updates sync with Purple Heron and Foggy
+4. User Stories for Customer Service Agents
+Story 1:
+As a customer service agent, I want to receive WhatsApp messages in my dashboard so that I can respond to customer queries in real time.
+
+Story 2:
+As an agent, I want to view the customer’s claim status and history alongside the WhatsApp conversation so that I can provide accurate support.
+
+Story 3:
+As a supervisor, I want to monitor WhatsApp interactions for SLA compliance and escalate unresolved issues.
+
+5. Security and Compliance Considerations
+All messages and media must be encrypted in transit and at rest.
+Webhook endpoints must be secured with IP whitelisting and token validation.
+Data retention policies must comply with POPIA and internal governance.
+Audit logs must be maintained for all message exchanges and API calls.
+6. Implementation Timeline
+Phase	Description	Duration	Owner
+Phase 1	Replace SMS with WhatsApp messaging	2 weeks	Dev Team
+Phase 2	API integration with SPM and Purple Heron	3 weeks	Integration Team
+Phase 3	Event Hub setup and testing	2 weeks	Infrastructure
+Phase 4	Agent dashboard enhancements	2 weeks	UX/BA Team
+Phase 5	UAT and Go-Live	1 week	QA & Ops
