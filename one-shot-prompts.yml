@@ -129,3 +129,15 @@ Let me know if you have any questions or need further details.
 
 Best regards,
 Nicholas
+
+# One-Shot vs Zero-Shot Comparison
+
+# Observations
+response_quality_differences: "[Add your observations about response quality differences]"
+pattern_influence: "[Note any patterns in how examples influenced outputs]"
+task_benefits: "[Record which types of tasks benefited most from examples]"
+
+best_practices:
+effective_examples: "[Your insights about crafting effective examples]"
+choosing_examples: "[Tips for choosing representative examples]"
+when_to_use: "[When one-shot works better than zero-shot]"
