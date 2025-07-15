@@ -1,0 +1,131 @@
+# One-Shot Prompt Practice
+# Code Review Comment
+prompt: |
+  Write a constructive code review comment for a pull request. Here's an example:
+  
+  Example: "Great work on implementing the user authentication! I noticed the password validation could be strengthened by adding a check for special characters. Consider using a regex pattern like /^(?=.*[!@#$%^&*])/ to ensure at least one special character. This would align with our security standards. Otherwise, the logic flow looks solid!"
+  
+  Now write a similar code review comment for a WhatsApp integration module that has good error handling but lacks proper logging.
+ai_response: "[Test this prompt and paste the response here]"
+
+# User Story Writing
+prompt: |
+  Write a user story following this format:
+  
+  Example: "As a customer service manager, I want to view real-time chat metrics on a dashboard so that I can monitor team performance and identify bottlenecks during peak hours. Acceptance criteria: Dashboard updates every 30 seconds, shows active chats, average response time, and agent availability."
+  
+  Now write a user story for a customer who wants to receive automated WhatsApp notifications about their order status.
+ai_response: "[Test this prompt and paste the response here]"
+
+# Bug Report
+prompt: |
+  Write a detailed bug report using this structure:
+  
+  Example: "**Title:** Login form validation fails with special characters
+  **Environment:** Chrome 120, Windows 11, Production
+  **Steps to Reproduce:** 1) Navigate to login page 2) Enter email with + symbol 3) Click submit
+  **Expected Result:** User should be logged in successfully
+  **Actual Result:** Error message 'Invalid email format' appears
+  **Priority:** Medium - affects users with email aliases"
+  
+  Now write a bug report for WhatsApp messages not being delivered during peak hours.
+ai_response: "[Test this prompt and paste the response here]"
+
+# Status Update Email
+prompt: |
+  Write a project status update email following this example:
+  
+  Example: "Subject: Weekly Update - Mobile App Redesign Project
+  
+  Hi Team,
+  
+  Here's our progress update for Week 12:
+  
+  ✅ **Completed:** User interface mockups for login and dashboard screens
+  ✅ **In Progress:** Backend API integration (60% complete)
+  ⚠️ **Blocked:** Waiting for design approval on payment flow
+  📅 **Next Week:** Complete API integration, begin user testing preparation
+  
+  Risk: Design approval delay may push testing back 3 days. Mitigation: Parallel work on other screens.
+  
+  Questions or concerns? Let's discuss in our Friday standup.
+  
+  Best regards,
+  Sarah"
+  
+  Now write a status update email for the WhatsApp integration project covering week 8 of development.
+ai_response: Code Review Comment
+Prompt:
+Write a constructive code review comment for a pull request. Here's an example:
+"Great work on implementing the user authentication! I noticed the password validation could be strengthened by adding a check for special characters..."
+
+Response:
+Great job on implementing solid error handling in the WhatsApp integration module! The try-catch blocks are well-placed and help ensure graceful failure. One suggestion for improvement would be to enhance the logging throughout the module. Adding structured logs—especially around message delivery attempts, webhook responses, and retry logic—would make it easier to trace issues in production. For example:
+
+
+This would improve observability and align with our monitoring standards. Overall, the integration logic is clean and well-structured!
+
+✅ User Story
+Prompt:
+Write a user story for a customer who wants to receive automated WhatsApp notifications about their order status.
+
+Response:
+As a customer, I want to receive automated WhatsApp notifications about my order status so that I can stay informed without needing to check manually.
+Acceptance criteria:
+
+Notifications are sent for order confirmation, dispatch, and delivery
+Messages include order ID and estimated delivery time
+Opt-in and opt-out options are available via WhatsApp
+✅ Bug Report
+Prompt:
+Write a bug report for WhatsApp messages not being delivered during peak hours.
+
+Response:
+Title: WhatsApp messages fail to deliver during peak hours
+Environment: Node.js backend, Twilio API, Production
+Steps to Reproduce:
+
+Trigger WhatsApp message dispatch between 6 PM and 8 PM
+Monitor delivery status via logs or Twilio dashboard
+Observe message status and error codes
+Expected Result:
+Messages should be delivered successfully regardless of time
+
+Actual Result:
+Messages remain in "queued" or "undelivered" state with intermittent 429 (rate limit) errors
+
+Priority: High – affects real-time customer communication during peak usage
+
+✅ Status Update Email
+Prompt:
+Write a status update email for the WhatsApp integration project covering week 8 of development.
+
+Response:
+Subject: Week 8 Update – WhatsApp Integration Project
+
+Hi Team,
+
+Here’s the progress update for Week 8:
+
+✅ Completed:
+
+Webhook endpoint setup and initial testing
+Message template approval with provider
+🔧 In Progress:
+
+Retry logic implementation (80% complete)
+Logging enhancements for message delivery
+⚠️ Blocked:
+
+Awaiting final credentials from provider for production environment
+📅 Next Week:
+
+Complete retry logic
+Begin end-to-end testing in staging
+Risk: Delay in provider credentials may impact UAT timeline.
+Mitigation: Parallel testing with sandbox environment underway.
+
+Let me know if you have any questions or need further details.
+
+Best regards,
+Nicholas
